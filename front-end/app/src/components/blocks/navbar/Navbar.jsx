@@ -70,9 +70,10 @@ export function NavigationMenuDemo() {
                     <Link href="/metas">Metas</Link>
                 </NavigationMenuLink>
             </NavigationMenuList>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            {/* futuramente... */}
+                {/* <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                     <Link href="/planos">Planos</Link>
-                </NavigationMenuLink>
+                </NavigationMenuLink> */}
         </NavigationMenu>
     )
 }
