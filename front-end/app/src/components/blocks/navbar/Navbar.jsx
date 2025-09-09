@@ -67,11 +67,11 @@ export function NavigationMenuDemo() {
                     <Link href="/transacoes">Transações</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link href="/docs">Metas</Link>
+                    <Link href="/metas">Metas</Link>
                 </NavigationMenuLink>
             </NavigationMenuList>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link href="/docs">Planos</Link>
+                    <Link href="/planos">Planos</Link>
                 </NavigationMenuLink>
         </NavigationMenu>
     )
