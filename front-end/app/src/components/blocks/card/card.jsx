@@ -10,23 +10,28 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { FaMoneyCheckAlt } from "react-icons/fa";
+
 
 const cards = [
     {
         id: 1,
         title: 'Saldo Atual',
+        icon: FaMoneyCheckAlt,
         price: "R$40,00",
         footer: 'Total disponivel'
     },
     {
         id: 2,
-        title: 'Gastos do mes',
+        title: 'Receitas do mes',
+        icon: FaMoneyCheckAlt,
         price: "R$40,00",
         footer: 'Total disponivel'
     },
     {
         id: 3,
-        title: 'Saldo Atual',
+        title: 'Despesas do mes',
+        icon: FaMoneyCheckAlt,
         price: "R$40,00",
         footer: 'Total disponivel'
     },
@@ -38,15 +43,18 @@ export function CardDemo() {
         <>
             {cards.map((card) => (
                 <div key={card.id}>
-                    <Card className="w-full max-w-sm">
+                    <Card className="w-full max-w-sm bg-purple-100">
                         <CardHeader>
-                            <CardTitle>{card.title}</CardTitle>
+                            <CardTitle className={"lg:text-xl"}>{card.title}</CardTitle>
+                            <CardAction className={'text-2xl'}>
+                                <card.icon/>
+                            </CardAction>
                         </CardHeader>
                         <CardContent>
-                            <p>{card.price}</p>
+                            <p className="font-bold lg:text-xl">{card.price}</p>
                         </CardContent>
                         <CardFooter className="flex-col gap-2">
-                            <p>{card.footer}</p>
+                            <p className="font-mono">{card.footer}</p>
                         </CardFooter>
                     </Card>
                 </div>

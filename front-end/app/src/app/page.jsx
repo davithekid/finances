@@ -1,6 +1,9 @@
+import { AccordionDemo } from "@/components/blocks/accordion/Accordion";
+import Footer from "@/components/blocks/Footer/Footer";
 import { NavigationMenuDemo } from "@/components/blocks/navbar/Navbar";
 import { SeparatorDemo } from "@/components/blocks/separator/separator";
 import { ModeToggle } from "@/components/themes/mode-toggle";
+import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,8 +17,10 @@ export default function Home() {
       </nav>
 
       <main className="mx-auto container py-8">
-        <SeparatorDemo/>
+        <SeparatorDemo />
       </main>
+
+        <Footer />
     </>
   );
 }
