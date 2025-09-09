@@ -8,11 +8,11 @@ export function SeparadorMetas() {
     return (
         <div>
             <div className="space-y-1">
-                <h4 className="text-sm lg:text-xl leading-none font-bold">Metas</h4>
+                <h4 className="text-sm lg:text-xl leading-none font-bold">Metas Financeiras</h4>
                 <div className="flex">
 
                     <p className="text-muted-foreground text-sm py-3">
-                        Crie e acompanhe suas metas!!
+                        Realize seus sonhos com planejamento.
                     </p>
                     <div className="ml-auto">
                         <AlertDialogMetas />

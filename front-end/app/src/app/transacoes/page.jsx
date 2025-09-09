@@ -1,6 +1,7 @@
 import Footer from "@/components/blocks/Footer/Footer";
 import { NavigationMenuDemo } from "@/components/blocks/navbar/Navbar";
 import { SeparatorTransacao } from "@/components/blocks/separator/separatorTransacao";
+import { DropdownMenuDemo } from "@/components/dropdown/dropdownAvatar";
 import { ModeToggle } from "@/components/themes/mode-toggle";
 
 export default function transacoes() {
@@ -9,7 +10,10 @@ export default function transacoes() {
             <nav>
                 <header className="mx-auto container flex justify-between py-6">
                     <NavigationMenuDemo />
-                    <ModeToggle />
+                    <div className="ml-auto flex gap-5">
+                        <ModeToggle />
+                        <DropdownMenuDemo />
+                    </div>
                 </header>
             </nav>
 
