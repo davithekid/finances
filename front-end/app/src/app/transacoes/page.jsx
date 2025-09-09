@@ -17,7 +17,6 @@ export default function transacoes() {
                 <SeparatorTransacao />
             </main>
 
-            <Footer />
         </>
     )
 }

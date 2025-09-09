@@ -17,7 +17,6 @@ export default function metas() {
                 <SeparadorMetas />
             </main>
 
-            <Footer/>
         </>
     )
 }

@@ -20,7 +20,6 @@ export default function Home() {
         <SeparatorDemo />
       </main>
 
-        <Footer />
     </>
   );
 }

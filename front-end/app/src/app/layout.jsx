@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/themes/theme-provider";
+import Footer from "@/components/blocks/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,16 +21,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          {/* conteúdo cresce para empurrar o footer */}
+          <main className="flex-1">{children}</main>
+          <Footer />
         </ThemeProvider>
-
       </body>
     </html>
   );

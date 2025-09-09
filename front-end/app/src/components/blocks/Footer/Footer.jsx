@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-purple-100 rounded-t-3xl h-screen">
+    <footer className="bg-purple-100 rounded-t-3xl">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4 px-4 py-6 text-center md:text-left">
         <h1 className="text-sm text-gray-700">
           © {new Date().getFullYear()} Site da Kuromi — inspirado para...
