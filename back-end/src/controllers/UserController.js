@@ -26,13 +26,14 @@ export default class UserController {
 
     static async create(request, reply) {
         try {
-            const { username, name, password, email } = request.body;
+            const { username, name, password, email} = request.body;
             const user = await User.create({
-                username, name, password, email
+                username, name, password, email 
             })
             return reply.status(201).send(user);
         } catch (error) {
             return reply.status(500).send({ error: 'Failed to create user' });
+            console.error(error);
         }
     }
 

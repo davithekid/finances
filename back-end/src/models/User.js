@@ -1,11 +1,13 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../config/database.js";
+import { v4 as uuidv4 } from "uuid";
 
-export default class User extends Model {}
+export default class User extends Model { }
 User.init({
     id: {
         type: DataTypes.CHAR(36),
-        primaryKey: true
+        primaryKey: true,
+        defaultValue: () => uuidv4() 
     },
     username: {
         type: DataTypes.STRING,
@@ -23,10 +25,10 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false
     }
-, }, {
+    ,
+}, {
     sequelize,
     tableName: 'users',
-    timestamps: true,
-    createdAt: 'criado_em',
-    updatedAt: 'atualizado_em'
+    timestamps: false,
+
 })
