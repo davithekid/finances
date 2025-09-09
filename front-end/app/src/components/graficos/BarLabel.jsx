@@ -53,7 +53,6 @@ export function ChartBarLabel() {
               bottom: 10,
             }}
           >
-            {/* removido o grid para ficar clean */}
             <XAxis
               dataKey="month"
               tickLine={false}

@@ -53,7 +53,6 @@ export function ChartLineLinear() {
               bottom: 10,
             }}
           >
-            {/* removido o grid para deixar limpo */}
             <XAxis
               dataKey="month"
               tickLine={false}

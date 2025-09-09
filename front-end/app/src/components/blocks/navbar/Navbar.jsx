@@ -58,21 +58,21 @@ export function NavigationMenuDemo() {
         <NavigationMenu viewport={false}>
             <NavigationMenuList>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link href="/docs"><img src="https://img.icons8.com/?size=512&id=CvGu0jSeBZLs&format=png" alt="" className="w-15" /></Link>
+                    <Link href="/"><img src="https://img.icons8.com/?size=512&id=CvGu0jSeBZLs&format=png" alt="" className="w-15" /></Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link href="/docs">Home</Link>
+                    <Link href="/">Home</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link href="/docs">Transações</Link>
+                    <Link href="/transacoes">Transações</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                     <Link href="/docs">Metas</Link>
                 </NavigationMenuLink>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link href="/docs">Histórico</Link>
-                </NavigationMenuLink>
             </NavigationMenuList>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                    <Link href="/docs">Planos</Link>
+                </NavigationMenuLink>
         </NavigationMenu>
     )
 }
