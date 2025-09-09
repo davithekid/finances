@@ -16,26 +16,27 @@ import { FaMoneyCheckAlt } from "react-icons/fa";
 const cards = [
     {
         id: 1,
-        title: 'Saldo Atual',
+        title: "Saldo Atual",
         icon: FaMoneyCheckAlt,
-        price: "R$40,00",
-        footer: 'Total disponivel'
+        price: "R$ 40,00",
+        footer: "Total disponível",
     },
     {
         id: 2,
-        title: 'Receitas do mes',
+        title: "Receitas do mês",
         icon: FaMoneyCheckAlt,
-        price: "R$40,00",
-        footer: 'Total disponivel'
+        price: "R$ 40,00",
+        footer: "Total disponível",
     },
     {
         id: 3,
-        title: 'Despesas do mes',
+        title: "Despesas do mês",
         icon: FaMoneyCheckAlt,
-        price: "R$40,00",
-        footer: 'Total disponivel'
+        price: "R$ 40,00",
+        footer: "Total disponível",
     },
-]
+];
+
 
 
 export function CardDemo() {
@@ -47,7 +48,7 @@ export function CardDemo() {
                         <CardHeader>
                             <CardTitle className={"lg:text-xl"}>{card.title}</CardTitle>
                             <CardAction className={'text-2xl'}>
-                                <card.icon/>
+                                <card.icon />
                             </CardAction>
                         </CardHeader>
                         <CardContent>

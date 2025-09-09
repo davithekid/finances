@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          
           {/* conteúdo cresce para empurrar o footer */}
           <main className="flex-1">{children}</main>
           <Footer />
