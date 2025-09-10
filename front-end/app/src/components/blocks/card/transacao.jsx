@@ -32,7 +32,7 @@ export function CardGastos() {
         <Card className="w-full max-w-sm bg-purple-100 hover:cursor-pointer hover:shadow-lg hover:scale-101 duration-200">
           <CardHeader className="flex items-center justify-between p-4">
             <div>
-              <CardTitle className="lg:text-xl">Gastos</CardTitle>
+              <CardTitle className="lg:text-xl dark:text-black">Gastos</CardTitle>
             </div>
             <FaPlus className="text-2xl text-purple-700" />
           </CardHeader>

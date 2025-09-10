@@ -36,7 +36,7 @@ export function CardDemo() {
           className="w-full max-w-sm bg-purple-100 shadow-md hover:shadow-lg transition-shadow duration-300"
         >
           <CardHeader className="flex justify-between items-center p-4">
-            <CardTitle className="text-lg font-semibold">{card.title}</CardTitle>
+            <CardTitle className="text-lg font-semibold dark:text-black">{card.title}</CardTitle>
             <CardAction className="text-2xl text-purple-700">
               <card.icon />
             </CardAction>
