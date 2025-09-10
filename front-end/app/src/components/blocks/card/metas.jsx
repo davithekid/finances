@@ -9,37 +9,37 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { FaWallet, FaArrowUp, FaArrowDown, FaEdit, FaRegCalendarAlt } from "react-icons/fa"
+import { FaWallet, FaEdit, FaRegCalendarAlt } from "react-icons/fa";
 
 const cards = [
   {
     id: 1,
     tipo: FaWallet,
-    title: "Saldo Atual",
+    title: "Viajar ao Japão",
     editar: FaEdit,
-    price: "R$ 2.500,00",
-    date: "31 de mai, 2025",
-    footer: "Total disponível para uso",
+    price: 12000,
+    date: "31/12/2025",
+    footer: "Economizar para a viagem dos sonhos",
   },
   {
     id: 2,
-    tipo: FaArrowUp,
-    title: "Receitas do mês",
+    tipo: FaWallet,
+    title: "Comprar Notebook",
     editar: FaEdit,
-    price: "R$ 4.000,00",
-    date: "31 de mai, 2025",
-    footer: "Entradas acumuladas no mês",
+    price: 8000,
+    date: "15/10/2025",
+    footer: "Investimento em equipamento de trabalho",
   },
   {
     id: 3,
-    tipo: FaArrowDown,
-    title: "Despesas do mês",
+    tipo: FaWallet,
+    title: "Curso de Inglês",
     editar: FaEdit,
-    price: "R$ 1.500,00",
-    date: "31 de mai, 2025",
-    footer: "Gastos registrados até agora",
+    price: 2500,
+    date: "01/09/2025",
+    footer: "Aprimorar habilidades para carreira",
   },
-]
+];
 
 export function CardMetas() {
   return (
@@ -69,7 +69,6 @@ export function CardMetas() {
             <ProgressDemo />
           </CardContent>
 
-          {/* Rodapé */}
           <CardFooter className="flex-col gap-2 items-start">
             <p className="flex items-center gap-2 text-sm text-muted-foreground">
               <FaRegCalendarAlt className="w-4 h-4" />
