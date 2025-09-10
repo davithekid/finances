@@ -39,7 +39,7 @@ export function ChartLineLinear() {
   return (
     <Card className="border-none shadow-none bg-transparent">
       <CardHeader>
-        <CardTitle>Line Chart - Linear</CardTitle>
+        <CardTitle>Receitas vs Despesas</CardTitle> 
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>

@@ -57,8 +57,8 @@ export function ChartPieLabel() {
   return (
     <Card className="border-none shadow-none bg-transparent flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Label</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Gastos por tipos</CardTitle>
+        <CardDescription>January - June 2025</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer

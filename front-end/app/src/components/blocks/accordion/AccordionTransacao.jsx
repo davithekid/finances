@@ -21,18 +21,17 @@ export function AccordionTransacao() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger className={"font-bold flex justify-center"}>Transações Recentes</AccordionTrigger>
                     <AccordionContent className="flex flex-col gap-4 text-balance">
-                        <p>
                             <ListDemo />
-                        </p>
+                       
                     </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2">
                     <AccordionTrigger className={"font-bold flex justify-center"}>Simulações Recentes</AccordionTrigger>
                     <AccordionContent className="flex flex-col gap-4 text-balance">
-                        <p>
+                    
                             <ListDemo />
-                        </p>
+                        
                     </AccordionContent>
                 </AccordionItem>
             </div>

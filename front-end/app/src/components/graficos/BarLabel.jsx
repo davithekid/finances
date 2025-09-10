@@ -17,21 +17,21 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 
-export const description = "A clean bar chart with labels"
+export const description = "Monthly transaction totals"
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "January", total: 4200 },
+  { month: "February", total: 5300 },
+  { month: "March", total: 4800 },
+  { month: "April", total: 6100 },
+  { month: "May", total: 4700 },
+  { month: "June", total: 5900 },
 ]
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "var(--chart-1)",
+  total: {
+    label: "Total Transações",
+    color: "var(--purple-500)", 
   },
 }
 
@@ -39,8 +39,8 @@ export function ChartBarLabel() {
   return (
     <Card className="border-none shadow-none bg-transparent">
       <CardHeader>
-        <CardTitle>Bar Chart - Label</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Transações Mensais</CardTitle>
+        <CardDescription>Jan - Jun 2025</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="h-60">
@@ -64,12 +64,13 @@ export function ChartBarLabel() {
               cursor={false}
               content={<ChartTooltipContent hideLabel />}
             />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={8}>
+            <Bar dataKey="total" fill="var(--purple-500)" radius={8}>
               <LabelList
                 position="top"
                 offset={8}
                 className="fill-foreground"
                 fontSize={12}
+                formatter={(value) => `R$${value.toLocaleString()}`}
               />
             </Bar>
           </BarChart>
@@ -77,12 +78,13 @@ export function ChartBarLabel() {
       </CardContent>
       <CardFooter className="flex-col items-start gap-2 text-sm">
         <div className="flex gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+          Crescimento de 8% este mês <TrendingUp className="h-4 w-4 text-green-500" />
         </div>
         <div className="text-muted-foreground leading-none">
-          Showing total visitors for the last 6 months
+          Total de transações registradas nos últimos 6 meses
         </div>
       </CardFooter>
     </Card>
   )
 }
+      
