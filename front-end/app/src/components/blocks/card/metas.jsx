@@ -45,7 +45,7 @@ export function CardMetas() {
   return (
     <>
       {cards.map((card) => (
-        <Card key={card.id} className="w-full max-w-sm bg-purple-100 shadow-md">
+        <Card key={card.id} className="w-full max-w-sm bg-pink-200 dark:bg-[#1c1917] shadow-md">
           <CardHeader>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">

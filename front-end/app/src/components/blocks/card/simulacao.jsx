@@ -41,15 +41,15 @@ export function CardSimulacao() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Card className="w-full max-w-sm bg-purple-100 hover:cursor-pointer hover:shadow-lg hover:scale-101 duration-200 ">
+        <Card className="w-full max-w-sm bg-pink-200 dark:bg-[#1c1917] hover:cursor-pointer hover:shadow-lg hover:scale-101 duration-200 ">
           <CardHeader className="flex items-center justify-between p-4">
             <div>
-              <CardTitle className="lg:text-xl dark:text-black">Simulação</CardTitle>
+              <CardTitle className="lg:text-xl dark:text-white">Simulação</CardTitle>
             </div>
             <FaPlus className="text-2xl text-purple-700" />
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-gray-700">Clique para adicionar gastos e calcular o total.</p>
+            <p className="text-sm text-gray-700 dark:text-white">Clique para adicionar gastos e calcular o total.</p>
           </CardContent>
         </Card>
       </AlertDialogTrigger>
