@@ -65,7 +65,7 @@ export function RegisterForm({ className, ...props }) {
             <img
               src="https://img.icons8.com/?size=512&id=CvGu0jSeBZLs&format=png"
               alt="Dark"
-              className="absolute inset-0 h-full w-full object-cover hidden dark:block"
+              className="absolute inset-0 h-full w-full p-2  hidden dark:block"
             />
           </div>
 
