@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator"
-import { AlertDialogSimulacao } from "@/components/dialogs/simulacao"
+import { AlertDialogSimulacao } from "@/components/blocks/card/simulacao"
 import { AlertDialogMetas } from "@/components/dialogs/metas"
 import { CardDemo } from "../card/card"
 import { CardMetas } from "../card/metas"
