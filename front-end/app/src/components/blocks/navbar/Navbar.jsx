@@ -45,7 +45,7 @@ export function NavigationMenuDemo() {
                     <Link href="/metas">Metas</Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                    <Link href="/metas">Histórico</Link>
+                    <Link href="/historico">Histórico</Link>
                 </NavigationMenuLink>
             </NavigationMenuList>
             {/* futuramente... */}
