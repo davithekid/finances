@@ -1,65 +1,56 @@
-import { Button } from "@/components/ui/button"
-import {
-    Card,
-    CardAction,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { FaMoneyCheckAlt } from "react-icons/fa";
+"use client"
 
+import { Card, CardHeader, CardTitle, CardAction, CardContent, CardFooter } from "@/components/ui/card"
+import { FaWallet, FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa"
 
 const cards = [
-    {
-        id: 1,
-        title: "Saldo Atual",
-        icon: FaMoneyCheckAlt,
-        price: "R$ 40,00",
-        footer: "Total disponível",
-    },
-    {
-        id: 2,
-        title: "Receitas do mês",
-        icon: FaMoneyCheckAlt,
-        price: "R$ 40,00",
-        footer: "Total disponível",
-    },
-    {
-        id: 3,
-        title: "Despesas do mês",
-        icon: FaMoneyCheckAlt,
-        price: "R$ 40,00",
-        footer: "Total disponível",
-    },
-];
-
-
+  {
+    id: 1,
+    title: "Saldo Atual",
+    icon: FaWallet,
+    price: "R$ 4.500,00",
+    footer: "Saldo disponível",
+  },
+  {
+    id: 2,
+    title: "Receitas do mês",
+    icon: FaArrowCircleUp,
+    price: "R$ 6.200,00",
+    footer: "Total de entradas",
+  },
+  {
+    id: 3,
+    title: "Despesas do mês",
+    icon: FaArrowCircleDown,
+    price: "R$ 1.700,00",
+    footer: "Total de gastos",
+  },
+]
 
 export function CardDemo() {
-    return (
-        <>
-            {cards.map((card) => (
-                <div key={card.id}>
-                    <Card className="w-full max-w-sm bg-purple-100">
-                        <CardHeader>
-                            <CardTitle className={"lg:text-xl"}>{card.title}</CardTitle>
-                            <CardAction className={'text-2xl'}>
-                                <card.icon />
-                            </CardAction>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="font-bold lg:text-xl">{card.price}</p>
-                        </CardContent>
-                        <CardFooter className="flex-col gap-2">
-                            <p className="font-mono">{card.footer}</p>
-                        </CardFooter>
-                    </Card>
-                </div>
-            ))}
-        </>
-    )
+  return (
+    <>
+      {cards.map((card) => (
+        <Card
+          key={card.id}
+          className="w-full max-w-sm bg-purple-100 shadow-md hover:shadow-lg transition-shadow duration-300"
+        >
+          <CardHeader className="flex justify-between items-center p-4">
+            <CardTitle className="text-lg font-semibold">{card.title}</CardTitle>
+            <CardAction className="text-2xl text-purple-700">
+              <card.icon />
+            </CardAction>
+          </CardHeader>
+
+          <CardContent className="px-4 py-2">
+            <p className="text-2xl font-bold text-gray-800">{card.price}</p>
+          </CardContent>
+
+          <CardFooter className="px-4 py-2">
+            <p className="text-sm font-mono text-gray-600">{card.footer}</p>
+          </CardFooter>
+        </Card>
+      ))}
+    </>
+  )
 }
