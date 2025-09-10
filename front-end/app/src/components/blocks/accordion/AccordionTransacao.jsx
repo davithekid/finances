@@ -6,7 +6,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { ListDemo, TableDemo } from "../table/table"
+import { TableGastos } from "../table/table"
 
 export function AccordionTransacao() {
     return (
@@ -21,7 +21,7 @@ export function AccordionTransacao() {
                 <AccordionItem value="item-1">
                     <AccordionTrigger className={"font-bold flex justify-center"}>Transações Recentes</AccordionTrigger>
                     <AccordionContent className="flex flex-col gap-4 text-balance">
-                            <ListDemo />
+                            <TableGastos />
                        
                     </AccordionContent>
                 </AccordionItem>
@@ -30,7 +30,7 @@ export function AccordionTransacao() {
                     <AccordionTrigger className={"font-bold flex justify-center"}>Simulações Recentes</AccordionTrigger>
                     <AccordionContent className="flex flex-col gap-4 text-balance">
                     
-                            <ListDemo />
+                            <TableGastos />
                         
                     </AccordionContent>
                 </AccordionItem>

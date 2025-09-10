@@ -1,70 +1,81 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { FaCreditCard, FaMoneyBillWave, FaExchangeAlt } from "react-icons/fa"
-import { SiPix } from "react-icons/si"
+import { CalendarDays, DollarSign } from "lucide-react"
+import { Input } from "@/components/ui/input"
 
-const transactions = [
-  { type: "Cartão de Crédito", sender: "João Silva", totalAmount: "R$250,00", date: "01/09/2025" },
-  { type: "Pix", sender: "Maria Oliveira", totalAmount: "R$150,00", date: "02/09/2025" },
-  { type: "Transferência Bancária", sender: "Carlos Santos", totalAmount: "R$350,00", date: "03/09/2025" },
-  { type: "Cartão de Crédito", sender: "Ana Paula", totalAmount: "R$450,00", date: "04/09/2025" },
-  { type: "Pix", sender: "Lucas Lima", totalAmount: "R$550,00", date: "05/09/2025" }
+const initialTransactions = [
+  { title: "Aluguel", description: "Apartamento centro", amount: 1200, date: "2025-09-01" },
+  { title: "Supermercado", description: "Compras semanais", amount: 450, date: "2025-09-02" },
+  { title: "Internet", description: "Plano de 500MB", amount: 100, date: "2025-09-03" },
+  { title: "Academia", description: "Mensalidade do mês", amount: 200, date: "2025-09-04" },
+  { title: "Transporte", description: "Cartão de metrô", amount: 150, date: "2025-09-05" },
 ]
 
-function getIcon(type) {
-  switch (type) {
-    case "Cartão de Crédito": return <FaCreditCard className="w-5 h-5 text-blue-500" />
-    case "Pix": return <SiPix className="w-5 h-5 text-green-500" />
-    case "Transferência Bancária": return <FaExchangeAlt className="w-5 h-5 text-purple-500" />
-    default: return <FaMoneyBillWave className="w-5 h-5 text-gray-500" />
-  }
-}
+export function TableGastos() {
+  const [transactions] = useState(initialTransactions)
 
-function getBadgeColor(type) {
-  switch (type) {
-    case "Cartão de Crédito": return "bg-blue-100 text-blue-700"
-    case "Pix": return "bg-green-100 text-green-700"
-    case "Transferência Bancária": return "bg-purple-100 text-purple-700"
-    default: return "bg-gray-100 text-gray-700"
-  }
-}
+  const formatCurrency = (value) =>
+    new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(value)
 
-export function ListDemo() {
   return (
-    <div className="flex flex-col items-center space-y-4 mt-8 w-full">
-      <ScrollArea className="w-full max-w-5xl">
-        <Table className="w-full">
-          <TableHeader>
-            <TableRow>
-              <TableHead>Remetente</TableHead>
-              <TableHead>Data</TableHead>
-              <TableHead className="text-center">Tipo</TableHead>
-              <TableHead className="text-right">Valor</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {transactions.map((tx, index) => (
-              <TableRow key={index} className="hover:bg-purple-50 transition-colors">
-                <TableCell className="flex items-center gap-2">
-                  {getIcon(tx.type)}
-                  {tx.sender}
-                </TableCell>
-                <TableCell>{tx.date}</TableCell>
-                <TableCell className="text-center">
-                  <Badge className={`py-1 ${getBadgeColor(tx.type)}`}>{tx.type}</Badge>
-                </TableCell>
-                <TableCell className={`text-right font-bold ${tx.type === "Pix" ? "text-green-600" : "text-gray-800"}`}>
-                  {tx.totalAmount}
-                </TableCell>
+    <div className="flex justify-center p-4 sm:p-6 lg:p-8">
+      <Card className="w-full max-w-4xl shadow-xl border-gray-100 rounded-xl transition-all duration-300 hover:shadow-2xl">
+        <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 p-6 border-b border-gray-100">
+          <div className="flex flex-col space-y-1.5">
+            <CardTitle className="text-2xl font-extrabold text-gray-800 flex items-center gap-2">
+              <DollarSign className="w-6 h-6 text-purple-600" />
+              Gastos Recentes
+            </CardTitle>
+
+          </div>
+        </CardHeader>
+
+        <CardContent className="p-0">
+          <Table className="w-full text-sm">
+            <TableHeader className="sticky top-0 bg-gray-50 border-b border-gray-100 z-10 shadow-sm">
+              <TableRow>
+                <TableHead className="py-3 px-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Título</TableHead>
+                <TableHead className="py-3 px-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden md:table-cell">Descrição</TableHead>
+                <TableHead className="py-3 px-6 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider hidden sm:table-cell">Data</TableHead>
+                <TableHead className="py-3 px-6 text-right text-xs font-semibold text-gray-600 uppercase tracking-wider">Valor</TableHead>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </ScrollArea>
+            </TableHeader>
+            <TableBody>
+              {transactions.length > 0 ? (
+                transactions.map((tx, index) => (
+                  <TableRow key={index} className="border-b border-gray-100 last:border-0 hover:bg-purple-50 transition-colors duration-150 ease-in-out group">
+                    <TableCell className="py-4 px-6 font-medium text-gray-800 group-hover:text-purple-700 transition-colors duration-150">
+                      {tx.title}
+                    </TableCell>
+                    <TableCell className="py-4 px-6 text-gray-500 hidden md:table-cell text-xs sm:text-sm">
+                      {tx.description || <span className="text-gray-400 italic">Sem descrição</span>}
+                    </TableCell>
+                    <TableCell className="py-4 px-6 text-gray-500 hidden sm:table-cell text-xs sm:text-sm">
+                      <div className="flex items-center gap-1">
+                        <CalendarDays className="w-3 h-3 text-gray-400" />
+                        {tx.date}
+                      </div>
+                    </TableCell>
+                    <TableCell className="py-4 px-6 text-right font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-150">
+                      {formatCurrency(tx.amount)}
+                    </TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <TableRow>
+                  <TableCell colSpan={4} className="text-center text-gray-500 py-12 text-base">
+                    Nenhum gasto registrado.
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
     </div>
   )
 }

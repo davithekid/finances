@@ -3,110 +3,81 @@
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { FaCreditCard, FaMoneyBillWave, FaExchangeAlt } from "react-icons/fa"
-import { SiPix } from "react-icons/si"
+import { Search } from "lucide-react"
 
 const initialTransactions = [
-  { type: "Cartão de Crédito", sender: "João Silva", totalAmount: 250, date: "2025-09-01" },
-  { type: "Pix", sender: "Maria Oliveira", totalAmount: 150, date: "2025-09-02" },
-  { type: "Transferência Bancária", sender: "Carlos Santos", totalAmount: 350, date: "2025-09-03" },
-  { type: "Cartão de Crédito", sender: "Ana Paula", totalAmount: 450, date: "2025-09-04" },
-  { type: "Pix", sender: "Lucas Lima", totalAmount: 550, date: "2025-09-05" }
+  { title: "Aluguel", description: "Apartamento centro", amount: 1200, date: "2025-09-01" },
+  { title: "Supermercado", description: "Compras semanais", amount: 450, date: "2025-09-02" },
+  { title: "Internet", description: "", amount: 100, date: "2025-09-03" },
+  { title: "Academia", description: "Mensalidade", amount: 200, date: "2025-09-04" },
+  { title: "Transporte", description: "", amount: 150, date: "2025-09-05" },
 ]
 
-function getIcon(type) {
-  switch (type) {
-    case "Cartão de Crédito": return <FaCreditCard className="w-5 h-5 text-blue-500" />
-    case "Pix": return <SiPix className="w-5 h-5 text-green-500" />
-    case "Transferência Bancária": return <FaExchangeAlt className="w-5 h-5 text-purple-500" />
-    default: return <FaMoneyBillWave className="w-5 h-5 text-gray-500" />
-  }
-}
-
-function getBadgeColor(type) {
-  switch (type) {
-    case "Cartão de Crédito": return "bg-blue-100 text-blue-700"
-    case "Pix": return "bg-green-100 text-green-700"
-    case "Transferência Bancária": return "bg-purple-100 text-purple-700"
-    default: return "bg-gray-100 text-gray-700"
-  }
-}
-
 export function HistoricoGastos() {
-  const [transactions, setTransactions] = useState(initialTransactions)
+  const [transactions] = useState(initialTransactions)
   const [search, setSearch] = useState("")
-  const [filterType, setFilterType] = useState("Todos")
 
-  // Filtro por tipo e pesquisa
-  const filteredTransactions = transactions.filter(tx => {
-    const matchesSearch = tx.sender.toLowerCase().includes(search.toLowerCase())
-    const matchesType = filterType === "Todos" || tx.type === filterType
-    return matchesSearch && matchesType
-  })
+  const formatCurrency = (value) =>
+    new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(value)
+
+  const filteredTransactions = transactions.filter(tx =>
+    tx.title.toLowerCase().includes(search.toLowerCase()) ||
+    (tx.description && tx.description.toLowerCase().includes(search.toLowerCase()))
+  )
 
   return (
-    <Card className="w-full max-w-6xl mt-8">
-      <CardHeader>
-        <CardTitle>Histórico de Gastos</CardTitle>
-        <div className="flex flex-col sm:flex-row gap-2 mt-2 sm:mt-0">
-          <Input
-            placeholder="Pesquisar por remetente..."
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-          />
-          <Select onValueChange={setFilterType} value={filterType}>
-            <SelectTrigger className="w-48">
-              <SelectValue placeholder="Filtrar por tipo" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="Todos">Todos</SelectItem>
-              <SelectItem value="Cartão de Crédito">Cartão de Crédito</SelectItem>
-              <SelectItem value="Pix">Pix</SelectItem>
-              <SelectItem value="Transferência Bancária">Transferência Bancária</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </CardHeader>
+    <div className="flex justify-center p-4 sm:p-6 lg:p-8">
+      <Card className="w-full max-w-4xl shadow-lg border-gray-100 rounded-xl">
+        <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0 p-6 border-b border-gray-100">
+          <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+            Histórico de Gastos
+          </CardTitle>
+          <div className="relative w-full sm:w-64">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+            <Input
+              placeholder="Pesquisar título ou descrição..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              className="pl-9 pr-3 py-2 border rounded-md focus:ring-2 focus:ring-purple-200 focus:border-purple-500 transition-all duration-200"
+            />
+          </div>
+        </CardHeader>
 
-      <CardContent>
-        <ScrollArea className="h-[400px]">
-          <Table className="w-full">
-            <TableHeader>
-              <TableRow>
-                <TableHead>Remetente</TableHead>
-                <TableHead>Data</TableHead>
-                <TableHead className="text-center">Tipo</TableHead>
-                <TableHead className="text-right">Valor</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredTransactions.map((tx, index) => (
-                <TableRow key={index} className="hover:bg-purple-50 transition-colors">
-                  <TableCell className="flex items-center gap-2">{getIcon(tx.type)} {tx.sender}</TableCell>
-                  <TableCell>{tx.date}</TableCell>
-                  <TableCell className="text-center">
-                    <Badge className={`py-1 ${getBadgeColor(tx.type)}`}>{tx.type}</Badge>
-                  </TableCell>
-                  <TableCell className={`text-right font-bold ${tx.type === "Pix" ? "text-green-600" : "text-gray-800"}`}>
-                    R$ {tx.totalAmount.toFixed(2)}
-                  </TableCell>
-                </TableRow>
-              ))}
-              {filteredTransactions.length === 0 && (
+        <CardContent className="p-0">
+          <ScrollArea className="h-[450px] overflow-y-auto">
+            <Table className="w-full text-sm">
+              <TableHeader className="sticky top-0 bg-gray-50 border-b border-gray-100 z-10">
                 <TableRow>
-                  <TableCell colSpan={4} className="text-center text-muted-foreground py-4">
-                    Nenhum registro encontrado.
-                  </TableCell>
+                  <TableHead className="py-3 px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Título</TableHead>
+                  <TableHead className="py-3 px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descrição</TableHead>
+                  <TableHead className="py-3 px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data</TableHead>
+                  <TableHead className="py-3 px-6 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Valor</TableHead>
                 </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </ScrollArea>
-      </CardContent>
-    </Card>
+              </TableHeader>
+              <TableBody>
+                {filteredTransactions.length > 0 ? (
+                  filteredTransactions.map((tx, index) => (
+                    <TableRow key={index} className="border-b border-gray-50 last:border-0 hover:bg-gray-50 transition-colors">
+                      <TableCell className="py-4 px-6 font-medium text-gray-700">{tx.title}</TableCell>
+                      <TableCell className="py-4 px-6 text-gray-500">{tx.description || "-"}</TableCell>
+                      <TableCell className="py-4 px-6 text-gray-500">{tx.date}</TableCell>
+                      <TableCell className="py-4 px-6 text-right font-semibold">{formatCurrency(tx.amount)}</TableCell>
+                    </TableRow>
+                  ))
+                ) : (
+                  <TableRow>
+                    <TableCell colSpan={4} className="text-center text-gray-500 py-8 text-base">
+                      Nenhum registro encontrado.
+                    </TableCell>
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </ScrollArea>
+        </CardContent>
+      </Card>
+    </div>
   )
 }
