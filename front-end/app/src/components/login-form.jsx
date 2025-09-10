@@ -21,7 +21,7 @@ export function LoginForm({
           <form className="p-6 md:p-8">
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
-                <h1 className="text-2xl font-bold">Welcome back</h1>
+                <h1 className="text-2xl font-bold">Bem-vindo(a)!!</h1>
 
               </div>
               <div className="grid gap-3">
@@ -30,9 +30,9 @@ export function LoginForm({
               </div>
               <div className="grid gap-3">
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Senha</Label>
                   <a href="/redifined" className="ml-auto text-sm underline-offset-2 hover:underline">
-                    Forgot your password?
+                    Esqueci minha senha
                   </a>
                 </div>
                 <Input id="password" type="password" required />
@@ -59,7 +59,7 @@ export function LoginForm({
             <img
               src="https://img.icons8.com/?size=512&id=CvGu0jSeBZLs&format=png"
               alt="Dark"
-              className="absolute inset-0 h-full w-full object-cover hidden dark:block"
+              className="absolute inset-0 h-full w-100 object-cover hidden dark:block p-3"
             />
           </div>
 
