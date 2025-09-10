@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Calendar22, Calendar29 } from "../calendarios/calendario"
 
 export function AlertDialogMetas() {
   return (
@@ -45,8 +46,8 @@ export function AlertDialogMetas() {
           </div>
 
           <div className="grid gap-1">
-            <Label htmlFor="data">Data Limite</Label>
-            <Input id="data" type="date" />
+            <Label htmlFor="data"> <Calendar29 /></Label>
+           
           </div>
         </div>
 

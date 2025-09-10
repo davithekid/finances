@@ -1,87 +1,54 @@
+"use client"
+
 import {
   Table,
   TableBody,
-  TableCaption,
-  TableCell,
   TableFooter,
   TableHead,
   TableHeader,
   TableRow,
+  TableCell,
 } from "@/components/ui/table"
 
-const invoices = [
-  {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
-  },
-  {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
-  },
-  {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
-  },
-  {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
-  },
+const transactions = [
+  { type: "Cartão de Crédito", sender: "João Silva", totalAmount: "R$250,00" },
+  { type: "Pix", sender: "Maria Oliveira", totalAmount: "R$150,00" },
+  { type: "Transferência Bancária", sender: "Carlos Santos", totalAmount: "R$350,00" },
+  { type: "Cartão de Crédito", sender: "Ana Paula", totalAmount: "R$450,00" },
+  { type: "Pix", sender: "Lucas Lima", totalAmount: "R$550,00" },
+  { type: "Transferência Bancária", sender: "Fernanda Souza", totalAmount: "R$200,00" },
+  { type: "Cartão de Crédito", sender: "Rafael Costa", totalAmount: "R$300,00" },
 ]
 
 export function TableDemo() {
   return (
-    <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {invoices.map((invoice) => (
-          <TableRow key={invoice.invoice}>
-            <TableCell className="font-medium">{invoice.invoice}</TableCell>
-            <TableCell>{invoice.paymentStatus}</TableCell>
-            <TableCell>{invoice.paymentMethod}</TableCell>
-            <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+    <div className="overflow-x-auto rounded-md border shadow-sm mx-6">
+      <Table className="min-w-[500px]">
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[180px]">Tipo</TableHead>
+            <TableHead className="w-[180px]">Remetente</TableHead>
+            <TableHead className="text-right w-[120px]">Valor</TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-      <TableFooter>
-        <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
-          <TableCell className="text-right">$2,500.00</TableCell>
-        </TableRow>
-      </TableFooter>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {transactions.map((tx, index) => (
+            <TableRow key={index}>
+              <TableCell>{tx.type}</TableCell>
+              <TableCell>{tx.sender}</TableCell>
+              <TableCell className="text-right">{tx.totalAmount}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>    
+        <TableFooter>
+          <TableRow>
+            <TableCell colSpan={2} className="font-semibold">
+              Total
+            </TableCell>
+            <TableCell className="text-right font-semibold">R$2.500,00</TableCell>
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </div>
   )
 }

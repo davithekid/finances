@@ -3,6 +3,7 @@ import { CardTransacao } from "../card/transacao"
 import { TableDemo } from "../table/table"
 import { AlertDialogTransacao } from "@/components/dialogs/transacao"
 import { AlertDialogSimulacao } from "@/components/dialogs/simulacao"
+import { CalendarDemo } from "@/components/calendarios/calendarioTransacao"
 
 export function SeparatorTransacao() {
     return (
