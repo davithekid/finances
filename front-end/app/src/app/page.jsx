@@ -1,30 +1,26 @@
-import { AvatarDemo } from "@/components/Avatar/avatar";
-import { AccordionDemo } from "@/components/blocks/accordion/Accordion";
-import Footer from "@/components/blocks/Footer/Footer";
-import { NavigationMenuDemo } from "@/components/blocks/navbar/Navbar";
+import CardBanner from "@/components/blocks/cards-index";
+import { Hero7 } from "@/components/blocks/Hero";
 import { SeparatorDemo } from "@/components/blocks/separator/separator";
-import { DropdownMenuDemo } from "@/components/dropdown/dropdownAvatar";
-import { ModeToggle } from "@/components/themes/mode-toggle";
-import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
+import Footer05Page from "@/components/footer/footer";
+import Navbar04Page from "@/components/navbar-04/navbar-04";
 
 export default function Home() {
   return (
     <>
       <nav>
         <header className="mx-auto container flex justify-between py-6">
-          <NavigationMenuDemo />
-          <div className="ml-auto flex gap-5">
-          <ModeToggle />
-          <DropdownMenuDemo/>
-          </div>
+          <Navbar04Page />
         </header>
       </nav>
 
-      <main className="mx-auto container py-8">
+      <main className="mx-auto container">
+        <Hero7 />
         <SeparatorDemo />
       </main>
 
+      <footer>
+        <Footer05Page />
+      </footer>
     </>
   );
 }

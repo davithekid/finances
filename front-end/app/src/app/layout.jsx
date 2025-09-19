@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/themes/theme-provider";
-import Footer from "@/components/blocks/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "kuromi",
-  description: "site p meu amor",
+  title: "finances",
+  description: "administre o seu dinheiro",
 };
 
 export default function RootLayout({ children }) {
@@ -31,9 +30,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           
-          {/* conteúdo cresce para empurrar o footer */}
           <main className="flex-1">{children}</main>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

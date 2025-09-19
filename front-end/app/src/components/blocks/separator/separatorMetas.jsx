@@ -6,25 +6,27 @@ import { CardMetas } from "../card/metas"
 
 export function SeparadorMetas() {
     return (
-        <div>
-            <div className="space-y-1">
+        <div className="">
+            <div className="space-y-1 p-2">
+                <div className="mx-5 lg:mx-31">
+
                 <h4 className="text-sm lg:text-xl leading-none font-bold">Metas Financeiras</h4>
                 <div className="flex">
 
                     <p className="text-muted-foreground text-sm py-3">
                         Realize seus sonhos com planejamento.
                     </p>
+                </div>
                     <div className="ml-auto">
                         <AlertDialogMetas />
                     </div>
                 </div>
 
-            <div className="grid grid-cols-3 py-2">
+            <div className="flex flex-wrap gap-8 justify-center py-2">
                 <CardMetas/>
             </div>
             </div>
            
-            <Separator className="my-4" />
         </div>
     )
 }

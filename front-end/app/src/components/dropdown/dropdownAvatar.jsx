@@ -28,14 +28,12 @@ export function DropdownMenuDemo() {
         <DropdownMenuGroup>
           <DropdownMenuItem>
              <Link href="/profile">Perfil</Link>
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
          
         </DropdownMenuGroup>
         
         <DropdownMenuItem>
           Log out
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

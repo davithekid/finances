@@ -1,23 +1,24 @@
-import { SeparatorHistorico } from "@/components/blocks/separator/historico";
+import { SeparatorTransacao } from "@/components/blocks/separator/separatorTransacao";
 import Footer05Page from "@/components/footer/footer";
 import Navbar04Page from "@/components/navbar-04/navbar-04";
 
-export default function Historico() {
+export default function transacoes() {
     return (
         <>
             <nav>
                 <header className="mx-auto container flex justify-between py-6">
                     <Navbar04Page />
-                </header>
-            </nav>
+                </header>       
+            </nav>          
 
-            <main className="mx-auto container py-20 px-6">
-                <SeparatorHistorico />
+            <main className="mx-auto container py-8 ml-4 lg:ml-80 ">
+                <SeparatorTransacao />
             </main>
 
             <footer>
                 <Footer05Page />
             </footer>
+
         </>
     )
 }
