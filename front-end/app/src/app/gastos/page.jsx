@@ -8,10 +8,10 @@ export default function transacoes() {
             <nav>
                 <header className="mx-auto container flex justify-between py-6">
                     <Navbar04Page />
-                </header>
-            </nav>
+                </header>       
+            </nav>          
 
-            <main className="mx-auto container py-8">
+            <main className="mx-auto container py-8 ml-4 lg:ml-80 ">
                 <SeparatorTransacao />
             </main>
 

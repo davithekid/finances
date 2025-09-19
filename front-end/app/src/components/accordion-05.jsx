@@ -4,30 +4,36 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { TableGastos } from "./blocks/table/table";
 
 const items = [
   {
-    title: "Is it accessible?",
-    content: '',
+    title: "Tabela de Gastos",
+    content: <TableGastos />, 
   },
   {
-    title: "Is it styled?",
-    content:
-      "Yes. It comes with default styles that matches the other components' aesthetic.",
+    title: "Outro conteúdo",
+     content: <TableGastos />, 
   },
-
 ];
 
 export default function AccordionBoxContainedDemo() {
   return (
-    <Accordion type="single" collapsible className="max-w-lg my-4 w-full">
+    <Accordion
+      type="single"
+      collapsible
+      className="w-100 lg:w-200 px-4 lg:px-0"
+    >
       {items.map(({ title, content }, index) => (
         <AccordionItem
           key={index}
           value={`item-${index}`}
-          className="last:border-none first:rounded-t-md last:rounded-b-md px-4 bg-muted">
-          <AccordionTrigger>{title}</AccordionTrigger>
-          <AccordionContent>{content}</AccordionContent>
+          className="last:border-none first:rounded-t-md last:rounded-b-md px-4 bg-muted "
+        >
+          <AccordionTrigger className={'font-bold'}>{title}</AccordionTrigger>
+          <AccordionContent className="p-2"> 
+            {content}
+          </AccordionContent>                 
         </AccordionItem>
       ))}
     </Accordion>

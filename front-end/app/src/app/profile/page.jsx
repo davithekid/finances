@@ -11,7 +11,7 @@ export default function Profile() {
                 </header>
             </nav>
 
-            <section className="mx-auto container">
+            <section className="mx-auto container px-4">
                 <SeparatorProfile />
             </section>
 

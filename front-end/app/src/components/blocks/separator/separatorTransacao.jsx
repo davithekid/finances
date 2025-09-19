@@ -9,7 +9,7 @@ import AccordionBoxContainedDemo from "@/components/accordion-05"
 
 export function SeparatorTransacao() {
     return (
-        <div>
+        <div className="">
             <div className="space-y-1 py-12">
                 <h4 className="text-sm lg:text-xl leading-none font-bold">Gastos</h4>
 
@@ -17,14 +17,14 @@ export function SeparatorTransacao() {
                 <p className="text-muted-foreground text-sm py-3">
                     Faça sua transação, simule e confira!
                 </p>
-                <div className="grid grid-cols-3 py-4">
+                <div className="flex flex-wrap py-4 gap-12">
                     <CardGastos />
                     <CardSimulacao/>
-                </div>              
+                </div>                  
 
             </div>      
             <Separator className="my-4" />
-            <section className="mx-auto container py-8 flex justify-center ">
+            <section className="mx-auto container py-8  ">
                 <AccordionBoxContainedDemo/>
             </section>
         </div>

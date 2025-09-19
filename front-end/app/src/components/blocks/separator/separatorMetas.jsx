@@ -7,7 +7,7 @@ import { CardMetas } from "../card/metas"
 export function SeparadorMetas() {
     return (
         <div>
-            <div className="space-y-1">
+            <div className="space-y-1 p-2">
                 <h4 className="text-sm lg:text-xl leading-none font-bold">Metas Financeiras</h4>
                 <div className="flex">
 
@@ -19,7 +19,7 @@ export function SeparadorMetas() {
                     </div>
                 </div>
 
-            <div className="grid grid-cols-3 py-2">
+            <div className="flex flex-wrap gap-8 justify-center py-2">
                 <CardMetas/>
             </div>
             </div>

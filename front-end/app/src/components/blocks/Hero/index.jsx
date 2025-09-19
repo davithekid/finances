@@ -14,7 +14,7 @@ const Hero7 = ({
   },
 }) => {
   return (
-    <section className="py-20">
+    <section className="py-22">
       <div className="container text-center">
         <div className="mx-auto flex max-w-5xl flex-col gap-6">
           <h1 className="text-3xl font-extrabold lg:text-6xl">{heading}</h1>

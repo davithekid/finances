@@ -11,7 +11,7 @@ export default function Historico() {
                 </header>
             </nav>
 
-            <main className="mx-auto container py-8">
+            <main className="mx-auto container py-18 px-6">
                 <SeparatorHistorico />
             </main>
 
