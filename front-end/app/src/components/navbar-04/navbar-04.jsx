@@ -14,12 +14,10 @@ const Navbar04Page = () => {
         <div className="h-full flex items-center justify-between mx-auto px-4">
           <Logo />
 
-          {/* Desktop Menu */}
           <NavMenu className="hidden md:block" />
 
           <div className="flex items-center gap-3">
             <ModeToggle />
-            <DropdownMenuDemo />
 
             {/* Mobile Menu */}
             <div className="md:hidden">

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "kuromi",
-  description: "site p meu amor",
+  title: "finances",
+  description: "administre o seu dinheiro",
 };
 
 export default function RootLayout({ children }) {
