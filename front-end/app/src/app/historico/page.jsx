@@ -1,24 +1,23 @@
-import { NavigationMenuDemo } from "@/components/blocks/navbar/Navbar";
 import { SeparatorHistorico } from "@/components/blocks/separator/historico";
-import { DropdownMenuDemo } from "@/components/dropdown/dropdownAvatar";
-import { ModeToggle } from "@/components/themes/mode-toggle";
+import Footer05Page from "@/components/footer/footer";
+import Navbar04Page from "@/components/navbar-04/navbar-04";
 
 export default function Historico() {
     return (
         <>
             <nav>
                 <header className="mx-auto container flex justify-between py-6">
-                    <NavigationMenuDemo />
-                    <div className="ml-auto flex gap-5">
-                        <ModeToggle />
-                        <DropdownMenuDemo />
-                    </div>
+                    <Navbar04Page />
                 </header>
             </nav>
 
             <main className="mx-auto container py-8">
-                <SeparatorHistorico/>
+                <SeparatorHistorico />
             </main>
+
+            <footer>
+                <Footer05Page />
+            </footer>
         </>
     )
 }

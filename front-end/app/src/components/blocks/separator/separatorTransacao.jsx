@@ -4,11 +4,13 @@ import {  CardSimulacao } from "@/components/blocks/card/simulacao"
 import { CardDemo } from "../card/card"
 import { AccordionTransacao } from "../accordion/AccordionTransacao"
 import { CardGastos } from "../card/transacao"
+import { AccordionDemo } from "../accordion/Accordion"
+import AccordionBoxContainedDemo from "@/components/accordion-05"
 
 export function SeparatorTransacao() {
     return (
         <div>
-            <div className="space-y-1">
+            <div className="space-y-1 py-12">
                 <h4 className="text-sm lg:text-xl leading-none font-bold">Gastos</h4>
 
 
@@ -22,8 +24,8 @@ export function SeparatorTransacao() {
 
             </div>      
             <Separator className="my-4" />
-            <section className="mx-auto container py-8 ">
-                <AccordionTransacao />
+            <section className="mx-auto container py-8 flex justify-center ">
+                <AccordionBoxContainedDemo/>
             </section>
         </div>
     )           

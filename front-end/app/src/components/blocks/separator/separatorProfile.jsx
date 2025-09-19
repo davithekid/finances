@@ -18,7 +18,7 @@ export function SeparatorProfile() {
                             <div className="space-y-2">
                                 <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Davi Chagas</h1>
                                 <p className="text-sm text-muted-foreground">
-                                    Desenvolvedor Back-end | Java | JavaScript | Spring Boot | Node.js | Docker | SQL | Git
+                                    Apaixonado pela minha namoradinha
                                 </p>
                             </div>
 
@@ -39,7 +39,6 @@ export function SeparatorProfile() {
                 </div>
             </section>
 
-            <Separator className="my-6" />
         </div>
     )
 }
